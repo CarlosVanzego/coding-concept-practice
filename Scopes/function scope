@@ -1,0 +1,25 @@
+function test() {
+  if (true) {
+    var ifVar = "if"
+    console.log(funcVar, ifVar)
+    // Prints: "Func", "if"
+  }
+
+  console.log(funVar, ifVar)
+  // Prints: "Func", "if"
+}
+
+// Multiple Variables With The Same Name
+
+function test() {
+  const a = "Func"
+
+  if (true) {
+    const a = "if"
+    console.log(a)
+    // Prints: "if"
+  }
+
+  console.log(a)
+  // Prints: "Func"
+}

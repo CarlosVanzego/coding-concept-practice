@@ -1,0 +1,20 @@
+fucntion test() {
+  const funcVar = "Func"
+
+  if (true) {
+    const ifVar = "If"
+    console.log(funcVar, ifVar)
+// Prints: "Func", "If"
+}
+
+  console.log(funVar, ifVar)
+  // Throws Uncaught Reference Error: ifVar is not defined
+}
+
+
+{
+  const a = 10
+}
+
+console.log(a)
+// Throws Uncaught Reference Error: a is not defined

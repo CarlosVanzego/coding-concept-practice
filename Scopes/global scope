@@ -1,0 +1,19 @@
+<script src="script-1.js"></script>
+
+// script.js
+
+const a = 1
+console.log(a)
+// Prints: 1 
+
+<script src="script-1.js"></script>
+<script src="script-2.js"></script>
+
+// script-1.js
+
+const a = 1
+
+// scripts.js
+
+console.log(a)
+// Prints: 1
