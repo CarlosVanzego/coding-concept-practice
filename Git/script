@@ -1,59 +1,51 @@
 # -Add/Commit All-
-git add .
-git commit -m "Message"
+git add .  # Adds all changes in the current directory to the staging area
+git commit -m "Message"  # Commits the staged changes with the provided message
 
-git commit -a -m "Message"
+git commit -a -m "Message"  # Commits all tracked changes without staging, with the provided message
 
-git add -A
-git commit -m "Message"
-
+git add -A  # Adds all changes (new, modified, deleted) to the staging area
+git commit -m "Message"  # Commits all staged changes with the provided message
 
 
 # -Aliases-
-git config --global alias.ac '!git add -A && git commit -m'
-git config --global alias.ac "commit -a -m"
-
+git config --global alias.ac '!git add -A && git commit -m'  # Defines an alias "ac" to add all changes and commit with a message
+git config --global alias.ac "commit -a -m"  # Defines an alias "ac" to commit all changes without staging with a message
 
 
 # Revert
-git revert 486bdb2
-git revert HEAD
+git revert 486bdb2  # Creates a new commit that undoes the changes of the specified commit
+git revert HEAD  # Creates a new commit that undoes the changes of the last commit
 
 
 # Reflog
-# // see the recent commits, pulls, resets, pushes, etc on your local machine
-git reflog
+git reflog  # Displays a log of recent commits, pulls, resets, pushes, etc. on your local machine
+
 
 # Pretty Logs
-# gives you the ability to print out a pretty log of your commits/branches.
-git log --graph --decorate --oneline
+git log --graph --decorate --oneline  # Displays a pretty log of commits with a graph, decorations, and one line per commit
+
 
 # Searching Logs
-#  search for specific changes in the code
-git log -S "A promise in JavaScript is very similar"
+git log -S "A promise in JavaScript is very similar"  # Searches for specific changes in the code
+
 
 # Stash
-# will stash all your code changes, but does not actually commit them.
-git stash
-git stash pop
+git stash  # Stashes all changes in the working directory, saving them for later use
+git stash pop  # Removes and applies the most recently stashed changes
+
 
 # Remove Dead Branches
-# Will delete all the tracking information for branches that are on your local machine that are not in the remote repository, but it does not delete your local branches
-git remote update --prune
-git branch -vv | awk "/: gone]/{print $1}" | xargs git branch -d
-git config --global alias.prune 'git remote update --prune && git branch -vv | awk "/: gone]/{print $1}" | xargs git branch -d
+git remote update --prune  # Fetches updates from the remote repository and prunes references to deleted branches
+git branch -vv | awk "/: gone]/{print $1}" | xargs git branch -d  # Deletes local branches that are no longer present on the remote repository
+git config --global alias.prune 'git remote update --prune && git branch -vv | awk "/: gone]/{print $1}" | xargs git branch -d'  # Defines an alias "prune" to update and prune remote references, and delete local branches not present remotely
 
 
 # Bisect
-# finding which commits caused certain bugs
-git bisect start 
-git bisect bad 
-git bisect good 48c86d6
+git bisect start  # Starts the binary search for identifying which commit introduced a bug
+git bisect bad  # Marks the current commit as bad
+git bisect good 48c86d6  # Marks a specific commit as good in the bisection process
 
 
 # Destroy Local Changes
-# Wipe out all changes on your local branch to exactly what is in the remote branch
-git reset --hard origin/main
-
-
-
+git reset --hard origin/main  # Resets the current branch to match the main branch on the remote repository, discarding all local changes
